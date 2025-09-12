@@ -33,7 +33,7 @@ HTML,BODY {
 }
 .cloud:nth-child(2) {
   top: 120px;
-  RIGHT: -300px;
+  right: -300px;
   animation-delay: 5s;
 }
 .cloud:nth-child(3) {
@@ -59,19 +59,77 @@ HTML,BODY {
     text-align: center;
       position: relative;
       z-index: 1;
+        margin-bottom: 120px;
   }
-  p {
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    text-align: center;
-    background-color: Whitesmoke;
-    padding: 10px;
-      position: relative;
-      z-index: 1;
-        width: 1500px;    /* 원하는 가로 크기 지정 */
-  margin: 0 auto; 
+.main {
+  background-color: whitesmoke;
+  padding: 10px;
+  font-size: 24px;
+  width: 70vw;
+  margin: 0 auto 30px auto;      /* 가운데 + 아래 공백 */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto 600px auto; /* 아래쪽 마진 20px */
+
+}
+
+.p2 {
+  background-color: whitesmoke;
+  padding: 10px;
+  font-size: 24px;
+  width:  70vw;      
+  margin-top: 30px;   
+  margin: 0 auto 30px auto;      /* 가운데 + 아래 공백 */
+  text-align: right;              /* 텍스트도 오른쪽 정렬 */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+
+}
+
+  .main, .p2 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
   }
+  .main.visible, .p2.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+    #backButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: teal;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  #backButton:hover {
+    background-color: #004d40;
+  }
+  
 </style>
+
+<script>
+  window.addEventListener('load', () => {
+    document.querySelector('.main').classList.add('visible');
+    document.querySelector('.p2').classList.add('visible');
+  });
+</script>
+
 </head>
 <body>
   <div class="cloud"></div>
@@ -79,13 +137,28 @@ HTML,BODY {
     <div class="cloud"></div>
   <div class="cloud"></div>
 
-  <h1>よろしくお願いします!</h1>
+  <h1>ABOUT</h1>
   
-  <p>
-    私の名前はヤンスンウと申します。<br><br>
-    1995年（平成７年）生まれです。<br>
-    私は朝鮮大学校(조선대학교)で経営学部で会計学を学びました。<br>
-    現在
-  </p>
+<p class="main">
+  私の名前はヤンスンウと申します。<br><br>
+  1995年（平成７年）生まれです。<br>
+  私は朝鮮大学校(조선대학교)の営業学部で会計学を学びました。<br>
+  現在自動車の椅子を作る製造業会社で税金や給料等を計る仕事に努めています。
+</p>
+<p class="p2">
+  ′人々の想像を目の前に具現化したい。′と思ってプログラミングの勉強を始めました。<br>
+  プログラミング言語は C言語を学び、<br>
+  今は JAVAに関する事も勉強しています。<br>
+  いつか世界の皆が便利に楽しく使えるサービスを
+</p>
+
+  <button id="backButton" title="뒤로가기" aria-label="뒤로가기">←</button>
+  
+  <script>
+  document.getElementById('backButton').addEventListener('click', function() {
+    history.back();
+  });
+</script>
+  
 </body>
 </html>

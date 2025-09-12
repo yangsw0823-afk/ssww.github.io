@@ -6,6 +6,30 @@
 </head>
  <style>
  
+    #backButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: teal;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    z-index: 9999;
+  }
+  #backButton:hover {
+    background-color: #004d40;
+  }
+ 
    body, html {
     margin: 0; padding: 0; height: 100%;
     overflow: AUTO;
@@ -85,6 +109,9 @@
   transform: rotateY(180deg); /* 좌우로 180도 회전 */
 }
 
+
+  
+
   </style>
 <body>
 
@@ -103,6 +130,14 @@
       <div class="box"> </div>
       <div class="box"> </div>
     </div>
+    
+      <button id="backButton" title="뒤로가기" aria-label="뒤로가기">←</button>
+  
+  <script>
+  document.getElementById('backButton').addEventListener('click', function() {
+    history.back();
+  });
+</script>
        
        <script>
   const starCount = 100; // 별 개수
@@ -118,6 +153,7 @@
     document.body.appendChild(star);
   }
 </script>
+
        
 </body>
 </html>
