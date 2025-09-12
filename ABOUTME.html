@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ABOUT ME</title>
+<style>
+HTML,BODY {
+    margin: 0; padding: 0; height: 100%;
+    background: linear-gradient(to bottom, #87CEEB, #b0e0e6);
+    overflow-x: hidden;
+  }
+
+  /* 구름 기본 스타일 */
+  .cloud {
+    position: absolute;
+    z-index: 0;
+    background: #fff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    box-shadow:
+      40px 20px 0 10px #fff,
+      80px 0 0 20px #fff,
+      120px 20px 0 10px #fff;
+    animation: moveClouds 40s linear infinite;
+    opacity: 0.8;
+  }
+
+.cloud:nth-child(1) {
+  top: 50px;
+  left: -150px;
+  animation-delay: 1s;
+}
+.cloud:nth-child(2) {
+  top: 120px;
+  RIGHT: -300px;
+  animation-delay: 5s;
+}
+.cloud:nth-child(3) {
+  top: 80px;
+  left: -400px;
+  animation-delay: 10s;
+}
+.cloud:nth-child(4) {
+  top: 100px;
+  left: -200px;
+  animation-delay: 15s;
+}
+
+  @keyframes moveClouds {
+    0% { left: -300px; }
+    100% { left: 100vw; }
+  }
+  
+  h1 {
+    font-family: 'Georgia', serif;
+    font-size: 72px;
+    color: teal;
+    text-align: center;
+      position: relative;
+      z-index: 1;
+  }
+  p {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    background-color: Whitesmoke;
+    padding: 10px;
+      position: relative;
+      z-index: 1;
+        width: 1500px;    /* 원하는 가로 크기 지정 */
+  margin: 0 auto; 
+  }
+</style>
+</head>
+<body>
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+    <div class="cloud"></div>
+  <div class="cloud"></div>
+
+  <h1>よろしくお願いします!</h1>
+  
+  <p>
+    私の名前はヤンスンウと申します。<br><br>
+    1995年（平成７年）生まれです。<br>
+    私は朝鮮大学校(조선대학교)で経営学部で会計学を学びました。<br>
+    現在
+  </p>
+</body>
+</html>

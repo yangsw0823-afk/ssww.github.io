@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PORTFOLIO</title>
+</head>
+ <style>
+ 
+   body, html {
+    margin: 0; padding: 0; height: 100%;
+    overflow: AUTO;
+    background: linear-gradient(to bottom, #000011, #000022); /* 밤하늘 그라데이션 */
+  }
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+  }
+  @keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+  }
+ 
+   h1 {
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+        p {
+            opacity: 0;
+            animation: fadeIn 4s forwards;
+        }
+                @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 96px;  /* 큰 제목 글씨 크기 */
+      color: teal;
+      text-align: center;
+    }
+    p {
+      font-family: 'Arial', sans-serif;
+      font-size: 30px;  /* 본문 글씨 크기 */
+      color: WHITE;
+      text-align: center;
+      margin-bottom: 150px;
+      
+    }
+    
+      .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 100px;
+      max-width: 1500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .box {
+      background-color: white;
+      width: 480px;
+      height: 480px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      color: teal;
+      font-weight: bold;
+      user-select: none;
+	  transition: transform 0.3s ease;
+ 	  transform-style: preserve-3d;
+ 	  perspective: 1000px; /* 3D 감을 줌 */
+ 	  margin-bottom: 150px;
+    }
+    
+    .box:hover {
+  transform: rotateY(180deg); /* 좌우로 180도 회전 */
+}
+
+  </style>
+<body>
+
+    <h1 style="text-align: center;">PORTFOLIO</h1>
+     <p style="text-align: center;">개발자로서 살아온 발자취입니다.<BR>
+     앞으로의 저를 기대해주세요<BR>
+     <BR>
+     開発者として生きてきた足跡です。<BR>
+     これからの私をご期待ください。</p>
+     
+       <div class="box-container">
+      <div class="box"> </div>
+      <div class="box"> </div>
+      <div class="box"> </div>
+      <div class="box"> </div>
+      <div class="box"> </div>
+      <div class="box"> </div>
+    </div>
+       
+       <script>
+  const starCount = 100; // 별 개수
+  for(let i=0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    const size = Math.random() * 2 + 1; // 1~3px 크기
+    star.style.width = size + 'px';
+    star.style.height = size + 'px';
+    star.style.top = Math.random() * window.innerHeight + 'px';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+    document.body.appendChild(star);
+  }
+</script>
+       
+</body>
+</html>

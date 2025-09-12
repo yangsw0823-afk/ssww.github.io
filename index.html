@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>양승우 짱!</title>
+    <style>
+        body {
+			background-image: url('sss.png');
+ 			background-repeat: no-repeat;
+			background-position: top center;
+			
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+        p {
+            opacity: 0;
+            animation: fadeIn 4s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        .link-boxes {
+            margin-top: 500px;
+        }
+        .link-box {
+            position: relative;
+            display: inline-block;
+            width: 450px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 0px solid #444;
+            border-radius: 8px;
+            margin: 0 10px;
+            line-height: 100px;
+            font-weight: bold;
+            font-size: 36px;  /* 크기 추가 */
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 3px #333;
+              opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+              text-decoration: none; /* 기본 밑줄 제거 */
+  transition: text-decoration 0.3s ease-in-out; /* 밑줄 나타나는 애니메이션 */
+        }
+        
+        
+          .link-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+.link-box::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 글자 아래에 밑줄이 정확히 오게 하기 위한 위치 지정 */
+    top: 30px;   /* 글자의 중앙에서 시작 */
+    margin-top: 40px; /* 폰트크기, line-height에 따라 조절 (글자 바로 아래 위치) */
+    width: 0;
+    height: 3px;
+    background-color: #C3FFD9;
+    transition: width 0.3s ease;
+}
+.link-box:hover::after {
+    width: 50%; 
+}
+        .link-box:hover {
+            text-decoration: NONE; 
+            background-color: #FFF0F5;
+            color: #C3FFD9;
+        }
+
+     
+    </style>
+</head>
+  <style>
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 96px;  /* 큰 제목 글씨 크기 */
+      color: teal;
+      text-align: center;
+    }
+    p {
+      font-family: 'Arial', sans-serif;
+      font-size: 30px;  /* 본문 글씨 크기 */
+      text-align: center;
+    }
+  </style>
+<body>
+
+    <h1 style="text-align: center;">안녕하세요</h1>
+    <p style="text-align: center;">지원자 양승우의 포트폴리오입니다.</p>
+    <p style="text-align: center;">ABOUT ME 페이지는 저의 대한 이야기를 담았습니다.<br>
+    제 경험과 앞으로 제가 개발자로 살아가면서 나아가고 싶은 방향을 소개하고 있습니다.<br>
+    PORTFOLIO 페이지는 지금까지 만들어온 저의 개발 이야기를 담았습니다.</p>
+    <h1 style="text-align: center;">初めまして！</h1>
+    <p style="text-align: center;">志願者ヤンスンウのポートフォリオです。</p>
+    <p style="text-align: center;">ABOUT ME ページは私という人の物語を書きました。<br>
+    私の経験とこれから私が開発者として生きながら進みたい道を紹介しています。<br>
+    PORTFOLIO　ページは今まで組み重ねてきた開発の物語を記録しています。</p>
+    <div class="link-boxes">
+        <a href="ABOUTME.html" class="link-box link1">ABOUT ME</a>
+        <a href="portfolio.html" class="link-box link2">PORTFOLIO</a>
+    </div>
+    <div style="margin-top: 100px; text-align: center; background: lightgray;">
+    <p style="font-size:24px; color: teal; font-weight: bold;">
+        <br>
+        YANG SEUNG WOO'S PORTFOLIO<br>
+        <br>
+    </p>
+</div>
+<script>
+function showOnScroll() {
+	  const boxes = document.querySelectorAll('.link-box');
+	  const windowHeight = window.innerHeight;
+
+	  boxes.forEach(box => {
+	    const boxTop = box.getBoundingClientRect().top;
+	    const boxBottom = box.getBoundingClientRect().bottom;
+
+	    // 화면에 요소가 보이기 시작할 때
+	    if(boxBottom > 0 && boxTop < windowHeight - 100) {
+	      box.classList.add('visible');
+	    } else {
+	      box.classList.remove('visible');
+	    }
+	  });
+	}
+
+	window.addEventListener('scroll', showOnScroll);
+	window.addEventListener('load', showOnScroll);
+</script>
+</body>
+</html>
